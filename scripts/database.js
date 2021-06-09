@@ -54,7 +54,7 @@ export const setInterior = () => {
 export const setTechnology = () => {
     customOrders.technologyId = technology.id
 }
-export const setWheels = () => {
+export const setWheel = () => {
     customOrders.wheelId = wheels.id
 }
 //Order Builder

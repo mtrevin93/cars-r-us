@@ -34,4 +34,7 @@ ul {
 
 .choices {
   display: flex;
+  flex-wrap:wrap;
+  padding:1em;
+  margin:1em;
 }

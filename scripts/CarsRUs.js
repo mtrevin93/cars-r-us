@@ -13,15 +13,15 @@ export const CarsRUs = () => {
             <p>${Colors()}</p>
             </section>
         <section class="options__interiors options">
-            <h2>Colors</h2>
+            <h2>Interiors</h2>
             <p>${Interiors()}</p>
             </section>
         <section class="options__technologies options">
-            <h2>Colors</h2>
+            <h2>Technologies</h2>
             <p>${Technologies()}</p>
             </section>
         <section class="options__wheels options">
-            <h2>Colors</h2>
+            <h2>Wheels</h2>
             <p>${Wheels()}</p>
     </article>
 
