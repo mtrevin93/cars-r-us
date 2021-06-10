@@ -6,16 +6,18 @@ addEventListener(
     "change",
     (event) => {
         if (event.target.name === "color") {
-            setColor(parseInt(event.target.value))
+            // setColor(parseInt(event.target.value))
+            const myColor = colors.find(color => color.id === parseInt(event.target.value))
+            setColor(myColor)
         }
     }
 )
 
-let htmlString = "<ul>"
 export const Colors = () => {
+    let htmlString = "<ul>"
     for (const color of colors) {
         htmlString += ` <li>
-        <input type="radio"name="color"value="${color.value}">${color.name}
+        <input type="radio"name="color"value="${color.id}">${color.name}
         </li>`
     }
     htmlString += "</ul>"

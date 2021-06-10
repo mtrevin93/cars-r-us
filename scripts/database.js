@@ -26,10 +26,8 @@ const database = {
         { id: 4, name: "18-inch Pair Spoke Black", price: 1400},
     ],
     orders: [
-        {id: 1, colorId: 2, interiorId: 3, technologyId: 4, wheelId: 4}
+        {id: 1, colorId: 2, interiorId: 3, technologyId: 4, wheelId: 4,timestamp: 1614659931693}
     ],
-    customOrders: [],
-
 }
 //Get Functions
 export const getColors = () => {
@@ -44,25 +42,33 @@ export const getTechnologies = () => {
 export const getWheels = () => {
     return [...database.wheels]
 }
+export const getOrders = () => {
+    return [...database.orders]
+}
 //Set Functions
-export const setColor = () => {
-    customOrders.colorId = color.id
+export const setColor = (color) => {
+    customOrder.colorId = color.id
 }
-export const setInterior = () => {
-    customOrders.interiorId = interior.id
+export const setInterior = (interior) => {
+    customOrder.interiorId = interior.id
 }
-export const setTechnology = () => {
-    customOrders.technologyId = technology.id
+export const setTechnology = (technology) => {
+    customOrder.technologyId = technology.id
 }
-export const setWheel = () => {
-    customOrders.wheelId = wheels.id
+export const setWheel = (wheel) => {
+    customOrder.wheelId = wheel.id
 }
 //Order Builder
+let customOrder = {}
 export const buildCustomOrder = () => {
-    const newOrder = {}
-    const lastArrayIndex = orders.length -1
-    const lastOrder = orders[lastArrayIndex]
-    newOrder.id = lastOrder.id +1
-    customOrders.push(newOrder)
+    const newOrder = customOrder
+    const lastArrayIndex = database.orders.length -1
+    const lastOrder = database.orders[lastArrayIndex]
+    customOrder.id = lastOrder.id +1
+    newOrder.timestamp = Date.now()
+    database.orders.push(newOrder)
+    customOrder = {}
+
+    document.dispatchEvent(new CustomEvent("stateChanged")) 
     
 }

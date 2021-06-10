@@ -6,13 +6,15 @@ addEventListener(
     "change",
     (event) => {
         if (event.target.name === "technology") {
-            setTechnology(parseInt(event.target.value))
+            // setTechnology(parseInt(event.target.value))
+            const myTechnology = technologies.find(technology => technology.id === parseInt(event.target.value))
+            setTechnology(myTechnology)
         }
     }
 )
-
-let htmlString = "<ul>"
 export const Technologies = () => {
+    
+    let htmlString = "<ul>"
     for (const technology of technologies) {
         htmlString += ` <li>
         <input type="radio"name="technology"value="${technology.id}">${technology.name}</li>`

@@ -2,6 +2,9 @@ import {Colors} from "./Colors.js"
 import {Interiors} from "./Interiors.js"
 import {Wheels} from "./Wheels.js"
 import {Technologies} from "./Technology.js"
+import {Orders} from "./Orders.js"
+import {CustomOrder} from "./CustomOrder.js"
+// import {CustomOrder} from "./CustomOrder.js"
 
 export const CarsRUs = () => {
     return `
@@ -26,12 +29,12 @@ export const CarsRUs = () => {
     </article>
 
         <article class=button>
-            <button id="orderButton">Create Custom Order
+        ${CustomOrder()}
         </article>
-
+        
+        <article class="customOrders">
+            <h2>Custom Car Orders</h2>
+            </p>${Orders()}</p>
+        </article>
         `
     }
-        // <article class="customOrders">
-        //     <h2>Custom Car Orders</h2>
-        //     </p>${Orders()}</p>
-        // </article>

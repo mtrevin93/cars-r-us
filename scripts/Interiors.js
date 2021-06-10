@@ -6,13 +6,15 @@ addEventListener(
     "change",
     (event) => {
         if (event.target.name === "interior") {
-            setInterior(parseInt(event.target.value))
+            // setInterior(parseInt(event.target.value))
+            const myInterior = interiors.find(interior => interior.id === parseInt(event.target.value))
+            setInterior(myInterior)
         }
     }
 )
 
-let htmlString = "<ul>"
 export const Interiors = () => {
+    let htmlString = "<ul>"
     for (const interior of interiors) {
         htmlString += ` <li>
        <input type="radio"name="interior"value="${interior.id}"> ${interior.name}
